@@ -1,7 +1,7 @@
 package lotto.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import lotto.dto.BonusNumber;
+import lotto.domain.BonusNumber;
 
 public class BonusNumberInputView {
 

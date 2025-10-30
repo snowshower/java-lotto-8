@@ -1,4 +1,4 @@
-package lotto.dto;
+package lotto.domain;
 
 public class BonusNumber {
     private final int BonusNumber;
