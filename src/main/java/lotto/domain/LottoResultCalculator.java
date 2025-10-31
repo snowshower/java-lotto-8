@@ -6,8 +6,8 @@ public class LottoResultCalculator {
 
     private LottoResultCalculator() {}
 
-    public static LottoRank lottoResultCalculate(Lotto resultLotto, Lotto myLotto, BonusNumber bonusNumber){
-        List<Integer> resultNumbers=resultLotto.getNumbers();
+    public static LottoRank lottoResultCalculate(Lotto winningLotto, Lotto myLotto, BonusNumber bonusNumber){
+        List<Integer> resultNumbers=winningLotto.getNumbers();
         List<Integer> myNumbers=myLotto.getNumbers();
 
         long matchCount=myNumbers.stream()

@@ -12,7 +12,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LottoResultCalculatorTest {
-    private final Lotto resultLotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
+    private final Lotto winningLotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
     private final BonusNumber bonusNumber = new BonusNumber(7);
 
     @DisplayName("당첨 결과를 올바르게 판단한다")
@@ -20,7 +20,7 @@ public class LottoResultCalculatorTest {
     void 당첨_번호와_로또_번호_6개가_일치한다(){
         Lotto firstLotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
 
-        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(resultLotto, firstLotto, bonusNumber);
+        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(winningLotto, firstLotto, bonusNumber);
         assertThat(actualRank).isEqualTo(LottoRank.FIRST);
     }
 
@@ -28,7 +28,7 @@ public class LottoResultCalculatorTest {
     void 당첨_번호와_로또_번호_5개가_일치하고_보너스_번호가_일치한다(){
         Lotto secondLotto = new Lotto(List.of(1, 2, 3, 4, 5, 7));
 
-        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(resultLotto, secondLotto, bonusNumber);
+        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(winningLotto, secondLotto, bonusNumber);
         assertThat(actualRank).isEqualTo(LottoRank.SECOND);
     }
 
@@ -36,7 +36,7 @@ public class LottoResultCalculatorTest {
     void 당첨_번호와_로또_번호_5개가_일치한다(){
         Lotto thirdLotto = new Lotto(List.of(1, 2, 3, 4, 5, 8));
 
-        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(resultLotto, thirdLotto, bonusNumber);
+        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(winningLotto, thirdLotto, bonusNumber);
         assertThat(actualRank).isEqualTo(LottoRank.THIRD);
     }
 
@@ -44,7 +44,7 @@ public class LottoResultCalculatorTest {
     void 당첨_번호와_로또_번호_4개가_일치한다(){
         Lotto fourthLotto = new Lotto(List.of(1, 2, 3, 4, 9, 10));
 
-        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(resultLotto, fourthLotto, bonusNumber);
+        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(winningLotto, fourthLotto, bonusNumber);
         assertThat(actualRank).isEqualTo(LottoRank.FOURTH);
     }
 
@@ -52,7 +52,7 @@ public class LottoResultCalculatorTest {
     void 당첨_번호와_로또_번호_3개가_일치한다(){
         Lotto fifthLotto = new Lotto(List.of(1, 2, 3, 9, 10, 11));
 
-        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(resultLotto, fifthLotto, bonusNumber);
+        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(winningLotto, fifthLotto, bonusNumber);
         assertThat(actualRank).isEqualTo(LottoRank.FIFTH);
     }
 
@@ -60,7 +60,7 @@ public class LottoResultCalculatorTest {
     void 당첨되지_않았다(){
         Lotto missLotto = new Lotto(List.of(1, 2, 9, 10, 11, 12));
 
-        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(resultLotto, missLotto, bonusNumber);
+        LottoRank actualRank = LottoResultCalculator.lottoResultCalculate(winningLotto, missLotto, bonusNumber);
         assertThat(actualRank).isEqualTo(LottoRank.MISS);
     }
 }
