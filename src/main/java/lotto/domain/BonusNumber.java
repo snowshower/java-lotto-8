@@ -6,4 +6,8 @@ public class BonusNumber {
     public BonusNumber(int bonusNumber) {
         this.BonusNumber = bonusNumber;
     }
+
+    public int getBonusNumber() {
+        return BonusNumber;
+    }
 }
