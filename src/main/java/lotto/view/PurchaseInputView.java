@@ -6,13 +6,13 @@ import lotto.domain.PurchaseAmount;
 public class PurchaseInputView {
 
     public PurchaseAmount purchaseInput(){
-        int purchaseAmount = inputPurchaseAmount();
+        long purchaseAmount = inputPurchaseAmount();
         return new PurchaseAmount(purchaseAmount);
     }
 
-    private int inputPurchaseAmount(){
+    private long inputPurchaseAmount(){
         System.out.println("구입금액을 입력해주세요.");
-        int purchaseAmount = Integer.parseInt(Console.readLine());
+        long purchaseAmount = Integer.parseInt(Console.readLine());
         return purchaseAmount;
     }
 }
