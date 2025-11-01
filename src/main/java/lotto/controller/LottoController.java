@@ -39,7 +39,7 @@ public class LottoController {
         outputView.printLottos(myLottos);
 
         Lotto winningLotto = lottoInputView.lotto();
-        BonusNumber bonusNumber = bonusNumberInputView.bonusNumberInput();
+        BonusNumber bonusNumber = bonusNumberInputView.bonusNumberInput(winningLotto);
 
         Map<LottoRank, Integer> result = myLottos.calculateAllLottoResult(winningLotto, bonusNumber);
         LottoStatistics lottoStatistics=new LottoStatistics(purchaseAmount, result);
