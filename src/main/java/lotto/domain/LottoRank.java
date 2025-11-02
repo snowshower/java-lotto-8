@@ -2,19 +2,17 @@ package lotto.domain;
 
 public enum LottoRank {
 
-    FIRST(6, 2000000000, "6개 일치"),
-    SECOND(5, 30000000, "5개 일치, 보너스 볼 일치"),
-    THIRD(5, 1500000, "5개 일치"),
-    FOURTH(4, 50000, "4개 일치"),
-    FIFTH(3, 5000, "3개 일치"),
-    MISS(0, 0, "꽝");
+    FIRST(2000000000, "6개 일치"),
+    SECOND(30000000, "5개 일치, 보너스 볼 일치"),
+    THIRD(1500000, "5개 일치"),
+    FOURTH(50000, "4개 일치"),
+    FIFTH(5000, "3개 일치"),
+    MISS(0, "꽝");
 
-    private final int matchCount;
     private final int prizeAmount;
     private final String description;
 
-    LottoRank(int matchCount, int prizeAmount, String description) {
-        this.matchCount = matchCount;
+    LottoRank( int prizeAmount, String description) {
         this.prizeAmount = prizeAmount;
         this.description = description;
     }
